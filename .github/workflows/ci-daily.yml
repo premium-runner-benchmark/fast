@@ -22,7 +22,7 @@ jobs:
     steps:
       # Start collecting stats
       - run: |
-          apt --fix-broken install
+          sudo apt --fix-broken install
       #- run: sudo apt -y install sysstat
       - run: mkdir -p ${{ runner.temp }}/${{ env.artifactsDir }}
       - run: iostat -yxmt 1 > ${{ runner.temp }}/${{ env.iostatFile }} &
