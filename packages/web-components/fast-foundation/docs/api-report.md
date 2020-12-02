@@ -578,7 +578,7 @@ export class Popover extends FASTElement {
     // (undocumented)
     disconnectedCallback(): void;
     // @internal
-    handlePositionChange: (ev: Event) => void;
+    handlePositionChange: (e: Event) => void;
     // @internal (undocumented)
     horizontalDefaultPosition: string | undefined;
     // @internal (undocumented)

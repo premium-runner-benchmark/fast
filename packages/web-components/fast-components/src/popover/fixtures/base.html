@@ -28,37 +28,39 @@
 
     <h2>Default</h2>
     <div class="container">
-        <fast-popover target="target-default">
-            <fast-card>
+        <fast-popover target="target-default" id="myPopover">
+            <fast-card tabindex="0">
                 Popover Content
             </fast-card>
         </fast-popover>
 
-        <fast-button id="target-default" style="margin: 200px;">
+        <fast-button
+            id="target-default"
+            style="margin: 200px;"
+            onclick="(e) => e.stopPropagation();document.body.querySelector('#myPopover').visible = !(document.body.querySelector('#myPopover').visible)"
+        >
             target
         </fast-button>
     </div>
 
     <h2>Default w/ Width & Height</h2>
     <div class="container">
-        <fast-popover target="target-sized" id="myPopover">
-            <fast-card class="sized-card card-styled">
-                <fast-button
-                    autofocus
-                    appearance="stealth"
-                    style="align-self: flex-end; justify-self: flex-start;"
-                    onclick="document.querySelector('#myPopover').visible = false;"
-                >
-                    X
-                </fast-button>
-                Popover Content
-            </fast-card>
+        <fast-popover target="target-sized" id="myPopoverTwo">
+            <button>test</button>
+            <fast-button
+                appearance="stealth"
+                style="align-self: flex-end; justify-self: flex-start;"
+                onclick="document.querySelector('#myPopoverTwo').visible = false;"
+                tabindex="0"
+            >
+                X
+            </fast-button>
         </fast-popover>
 
         <fast-button
             id="target-sized"
             style="margin: 200px;"
-            onclick="(e) => e.stopPropagation(); document.body.querySelector('#myPopover').visible = !(document.body.querySelector('#myPopover').visible)"
+            onclick="(e) => e.stopPropagation(); document.body.querySelector('#myPopoverTwo').visible = !(document.body.querySelector('#myPopoverTwo').visible)"
         >
             target
         </fast-button>
